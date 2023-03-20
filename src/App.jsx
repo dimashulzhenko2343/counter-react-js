@@ -1,36 +1,37 @@
 import React, { Component } from "react";
-import "./App.css";
+import s from "./App.module.css";
+import Counter from "./components/ClassCounter/Counter";
+import ClassTimer from "./components/ClassTimer/ClassTimer";
+import Posts from "./components/Posts/Posts";
 
 class App extends Component {
   state = {
-    count: 0,
+    posts: [
+      { id: "b1", name: "JS Component" },
+      { id: "b2", name: "React Component" },
+      { id: "b3", name: "CSS Component" },
+    ],
   };
 
-  handleClickPlus = () => {
-    this.setState({ count: this.state.count + 1 });
+  handleSomething = () => {
+    alert("App jsx set update");
   };
 
-  handleClickReset = () => {
-    this.setState({ count: 0 });
-  };
-
-  handleClickMinus = () => {
-    if (this.state.count <= 0) {
-      this.setState({ count: this.state.count });
-    } else {
-      this.setState({ count: this.state.count - 1 });
-    }
+  removePost = (id) => {
+    this.setState({
+      posts: this.state.posts.filter((post) => 
+        post.id !== id
+      ),
+    });
   };
 
   render() {
-    console.log('render :', this.state.count);
+    const { posts } = this.state;
     return (
-      <div className="App">
-        <h1>Сounter class components</h1>
-        <div style={{fontSize: '25px'}}>{this.state.count}</div>
-        <button onClick={this.handleClickPlus}>+1</button>
-        <button onClick={this.handleClickReset}>reset</button>
-        <button onClick={this.handleClickMinus}>-1</button>
+      <div className={s.App}>
+        <Counter />
+        <ClassTimer />
+        <Posts posts={posts} cb={this.handleSomething} remPost={this.removePost} />
       </div>
     );
   }
