@@ -22,7 +22,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={s.Counter}>
         <h2>Сounter</h2>
         <div className={s.displayCount}>{this.state.count}</div>
         <button onClick={this.handleClickPlus}>+1</button>

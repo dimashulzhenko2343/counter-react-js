@@ -1,12 +1,13 @@
 import Post from "./Post/Post";
+import s from './Posts.module.css'
 
 function Posts(props) {
   const {cb, posts, remPost} = props
   return (
-    <div className="ClassListComponents">
-      ClassListComponents
+    <div className={s.ClassListComponents} >
+      <h2>Working with collections</h2>
       {posts.map((post) => (
-        <Post id={post.id} name={post.name} cb={cb} remPost={remPost}/>
+        <Post key={post.id} id={post.id} name={post.name} cb={cb} remPost={remPost}/>
       ))}
 
     </div>
