@@ -32,7 +32,7 @@ class Form extends Component {
   };
 
   render() {
-    const { firstName, email, message, selest, subscription, gender } =
+    const { firstName, email, message, select, subscription, gender } =
       this.state;
     return (
       <div className={s.Form}>
@@ -69,7 +69,7 @@ class Form extends Component {
         </div>
         <div className={s.boxInputCheckbox}>
           <div className={s.boxSelect}>
-            <select name="select" value={selest} onChange={this.handleChange}>
+            <select name="select" value={select} onChange={this.handleChange}>
               <option value="" disabled></option>
               <option value="1">1</option>
               <option value="2">2</option>

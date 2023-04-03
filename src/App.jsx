@@ -6,6 +6,7 @@ import Form from "./components/Form/Form";
 import FormValid from "./components/FormValid/FormValid";
 import FormWithRef from "./components/FormWithRef/FormWithRef";
 import Posts from "./components/Posts/Posts";
+import FunctionCounter from "./components/FunctionCounter/FunctionCounter";
 
 class App extends Component {
   state = {
@@ -28,16 +29,23 @@ class App extends Component {
     const { posts } = this.state;
     return (
       <div className={s.App}>
-        <Counter />
-        <ClassTimer />
-        <Posts
-          posts={posts}
-          cb={this.handleSomething}
-          remPost={this.removePost}
-        />
-        <Form />
-        <FormValid />
-        <FormWithRef />
+        <h1>Class components</h1>
+        <div className={s.boxClassComponents}>
+          <Counter />
+          <ClassTimer />
+          <Posts
+            posts={posts}
+            cb={this.handleSomething}
+            remPost={this.removePost}
+          />
+          <Form />
+          <FormValid />
+          <FormWithRef />
+        </div>
+          <h1>Functional components</h1>
+          <div className={s.boxFunctComponents}>
+            <FunctionCounter />
+          </div>
       </div>
     );
   }
