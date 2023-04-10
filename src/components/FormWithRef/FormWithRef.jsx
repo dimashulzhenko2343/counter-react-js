@@ -22,7 +22,6 @@ class FormWithRef extends Component {
 
   componentDidMount() {
     this.cardRef.current.focus();
-    console.log(this.state.card.length === 0);
   }
 
   render() {

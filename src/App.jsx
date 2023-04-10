@@ -7,6 +7,8 @@ import FormValid from "./components/FormValid/FormValid";
 import FormWithRef from "./components/FormWithRef/FormWithRef";
 import Posts from "./components/Posts/Posts";
 import FunctionCounter from "./components/FunctionCounter/FunctionCounter";
+import ButtonClicker from "./components/ButtonClicker/ButtonClicker";
+import FunctionTimer from "./components/FunctionTimer/FunctionTimer";
 
 class App extends Component {
   state = {
@@ -45,6 +47,8 @@ class App extends Component {
           <h1>Functional components</h1>
           <div className={s.boxFunctComponents}>
             <FunctionCounter />
+            <ButtonClicker />
+            {/* <FunctionTimer /> */}
           </div>
       </div>
     );
