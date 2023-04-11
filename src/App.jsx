@@ -8,7 +8,8 @@ import FormWithRef from "./components/FormWithRef/FormWithRef";
 import Posts from "./components/Posts/Posts";
 import FunctionCounter from "./components/FunctionCounter/FunctionCounter";
 import ButtonClicker from "./components/ButtonClicker/ButtonClicker";
-import FunctionTimer from "./components/FunctionTimer/FunctionTimer";
+import { Context } from "./hooks/useContext/Context";
+import { Books } from "./components/FunctionBooks/Books";
 
 class App extends Component {
   state = {
@@ -44,12 +45,16 @@ class App extends Component {
           <FormValid />
           <FormWithRef />
         </div>
-          <h1>Functional components</h1>
-          <div className={s.boxFunctComponents}>
-            <FunctionCounter />
-            <ButtonClicker />
-            {/* <FunctionTimer /> */}
+        <h1>Functional components</h1>
+        <div className={s.boxFunctComponents}>
+          <FunctionCounter />
+          <ButtonClicker />
+          <div className="useContext">
+            <Context>
+              <Books />
+            </Context>
           </div>
+        </div>
       </div>
     );
   }

@@ -10,6 +10,8 @@ h1, h2 {
 
 .boxClassComponents, .boxFunctComponents {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
